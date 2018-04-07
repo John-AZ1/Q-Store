@@ -2,14 +2,16 @@
   "name": "scratch",
   "version": "1.0.0",
   "description": "A react app from scratch",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js"
+    "react": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "electron": "electron ."
   },
   "author": "John AZ1",
   "license": "ISC",
   "dependencies": {
+    "npm": "^5.8.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -30,6 +32,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^0.28.9",
+    "electron": "^1.8.4",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "style-loader": "^0.20.1"

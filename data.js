@@ -1,12 +1,6 @@
-// imports
-import React, {Component} from 'react'
-import {CadetItem, Heading, Filter} from '../components'
-import 'reset-css/reset.css';
-import {connect} from 'react-redux'
-import {setMessage} from '../actions/message'
-import {Link} from 'react-router-dom'
-// import data from '../data'
-let data = [
+class data {
+  constructor() {
+    this.data = [
       {
         "url":"../photos/man-user.png",
         "name": "Macdonald",
@@ -259,55 +253,9 @@ let data = [
         ]
       }
     ]
-
-
-class App extends Component {
-	constructor() {
-		super()
-		this.state = {cadetData: data, filter: ''}
-	}
-
-	render() {
-		let textStyle = {fontFamily:'helvetica',fontSize: 'inherit'}
-		let repeat = Math.floor(window.innerWidth/216)
-		let times = 'repeat('+repeat+',200px)'
-		let gridTemplate = {
-			display: 'grid',
-			gridTemplateColumns: times,
-			gridGap: '10px',
-			gridAutoflow: 'dense',
-			gridAutoRows: '350px',
-		}
-		return (
-			<div>
-				<Heading style={{...textStyle}}>Q-Store</Heading>
-				<Filter onTextChange={filter => this.setState({filter: filter})}></Filter>
-				<div style={gridTemplate}>
-					{this.state.cadetData.filter(cadet => {
-						// 	cadet.name.includes(this.state.filter)
-						// ||
-						// 	cadet.rank.includes(this.state.filter)
-            // ||
-              for (var i = 0; i < cadet.stores.length; i++) {
-                if (cadet.stores[i].includes(this.state.filter)) {
-                  return true
-                } else if (cadet.name.includes(this.state.filter)) {
-                  return true
-                } else if (cadet.rank.includes(this.state.filter)) {
-                  return true
-                }
-              }
-						})
-						.map((cadet, i) =>
-							<CadetItem key={i} style={textStyle} cadet={cadet} filter={this.state.filter}></CadetItem>)
-					}
-				</div>
-				{
-					//<div style={{display:'fixed'}}>Icon made by Freepik from www.flaticon.com</div>
-				}
-			</div>
-		)
-	}
+  }
+  updateData(p) {
+      data = p
+  }
 }
-
-export default connect(state => state)(App)
+export default data

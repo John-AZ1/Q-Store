@@ -1,12 +1,14 @@
 import React from 'react'
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 import App from './containers/App'
+import Cadets from './containers/Cadets'
 
 export default () => {
 	return(
 		<BrowserRouter>
 			<Switch>
 				<Route exact path='/' component={App}/>
+				<Route path='/:cadet' name='cadet' component={Cadets}/>
 			</Switch>
 		</BrowserRouter>
 	)

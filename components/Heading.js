@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default class Header extends Component {
+export default class Heading extends Component {
   render() {
     let style = {
       fontSize: '64px'
